@@ -18,10 +18,10 @@ FROM openjdk:17-jre-slim
 WORKDIR /app
 
 # Copy the JAR file from the build image
-COPY --from=build /app/target/your-app-name.jar /app/your-app-name.jar
+COPY --from=build /app/target/hello-world-spring-boot-*.jar /app/hello-world-spring-boot.jar
 
 # Expose the port your Spring Boot app runs on
 EXPOSE 8080
 
 # Run the Spring Boot app
-ENTRYPOINT ["java", "-jar", "/app/your-app-name.jar"]
+ENTRYPOINT ["java", "-jar", "/app/hello-world-spring-boot.jar"]
